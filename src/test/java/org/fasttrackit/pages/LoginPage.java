@@ -8,7 +8,7 @@ import java.time.Duration;
 import java.time.temporal.TemporalUnit;
 import java.util.concurrent.TimeUnit;
 
-public class LoginPage extends PageObject {
+public class LoginPage extends BasePage {
 
     @FindBy(id = "email")
     private WebElementFacade emailField;

@@ -1,5 +1,6 @@
 package org.fasttrackit.features;
 
+import org.fasttrackit.utils.EnvConstants;
 import org.junit.Test;
 
 public class LoginTest extends BaseTest{
@@ -8,9 +9,17 @@ public class LoginTest extends BaseTest{
     public void loginWithValidCredentialsTest(){
         loginSteps.navigateToHomePage();
         loginSteps.navigateToLoginPage();
-        loginSteps.enterCredentials("cosmin@fasttrackit.org","123456");
+        loginSteps.enterCredentials("gabi.mihalache16@yahoo.com","test123");
         loginSteps.clickLogin();
         loginSteps.checkUserIsLoggedIn("Cosmin Fast");
+    }
+
+    @Test
+    public void loginWithInValidCredentialsTest(){
+        loginSteps.navigateToLoginPage();
+        loginSteps.enterCredentials("asd@asd.asd", EnvConstants.USER_PASS);
+        loginSteps.clickLogin();
+        loginSteps.checkUserIsLoggedIn(EnvConstants.USER_NAME);
     }
 
 

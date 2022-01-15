@@ -6,7 +6,7 @@ import net.thucydides.core.annotations.DefaultUrl;
 import net.thucydides.core.pages.PageObject;
 
 @DefaultUrl("http://testfasttrackit.info/selenium-test/")
-public class HomePage extends PageObject {
+public class HomePage extends BasePage {
 
     @FindBy(css = ".skip-account .label")
     private WebElementFacade accountLink;
@@ -22,6 +22,12 @@ public class HomePage extends PageObject {
 
     @FindBy(css = "[title=\"Register\"]")
     private WebElementFacade registerLink;
+
+    @FindBy(css = ".skip-cart .label")
+    private WebElementFacade cartIcon;
+
+    @FindBy(css = ".cart-link")
+    private WebElementFacade viewShoppingCartLink;
 
     public void clickAccountLink() {
         clickOn(accountLink);
@@ -41,6 +47,15 @@ public class HomePage extends PageObject {
 
     public void clickRegisterLink(){
         clickOn(registerLink);
+    }
+
+    public void clickOnCartIcon() {
+        clickOn(cartIcon);
+    }
+
+    public void clickOnViewShoppingCartLink() {
+        waitFor(viewShoppingCartLink);
+        clickOn(viewShoppingCartLink);
     }
 
 

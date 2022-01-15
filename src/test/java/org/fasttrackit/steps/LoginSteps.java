@@ -41,7 +41,6 @@ public class LoginSteps extends ScenarioSteps {
 
     @Step
     public void doLogin(String user, String pass){
-        navigateToHomePage();
         navigateToLoginPage();
         enterCredentials(user,pass);
         clickLogin();
